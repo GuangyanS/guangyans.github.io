@@ -1,0 +1,99 @@
+{
+  "publications": [
+    {
+      "title": "MEPT: Mixture of Expert Prompt Tuning as a Manifold Mapper",
+      "authors": [
+        "Runjia Zeng",
+        "Guangyan Sun",
+        "Qifan Wang",
+        "Tong Geng",
+        "Sohail Dianat",
+        "Xiaotian Han",
+        "Raghuveer Rao",
+        "Xueling Zhang",
+        "Cheng Han",
+        "Lifu Huang",
+        "Dongfang Liu"
+      ],
+      "venue": "EMNLP (Main), 2025",
+      "thumbnail": "images/mept/figure.png",
+      "selected": 1,
+      "award": "",
+      "links": {
+        "pdf": "https://arxiv.org/pdf/2509.00996",
+        "code": "https://github.com/runtsang/MEPT",
+        "project": "https://runjia.tech/emnlp_mept/"
+      }
+    },
+    {
+      "title": "DS-TIDE: Harnessing Dynamical Systems for Efficient Time-Independent Differential Equation Solving",
+      "authors": [
+        "Chuan Liu",
+        "Chunshu Wu",
+        "Ruibing Song",
+        "Guangyan Sun",
+        "Ying Nian Wu",
+        "Yousu Chen",
+        "Ang Li",
+        "Tong Geng"
+      ],
+      "venue": "MICRO, 2025",
+      "thumbnail": "images/DS-TIDE/image.png",
+      "selected": 1,
+      "award": "",
+      "links": {
+        "pdf": "https://dl.acm.org/doi/pdf/10.1145/3725843.3756082"
+      }
+    },
+    {
+      "title": "Visual Agents as Fast and Slow Thinkers",
+      "authors": [
+        "Guangyan Sun*",
+        "Mingyu Jin*",
+        "Zhenting Wang",
+        "Cheng-Long Wang",
+        "Siqi Ma",
+        "Qifan Wang",
+        "Tong Geng",
+        "Ying Nian Wu",
+        "Yongfeng Zhang",
+        "Dongfang Liu"
+      ],
+      "venue": "ICLR, 2025",
+      "thumbnail": "images/fast/system2-fig.jpg",
+      "selected": 1,
+      "award": "",
+      "links": {
+        "pdf": "https://arxiv.org/pdf/2408.08862",
+        "code": "https://github.com/GuangyanS/Sys2-LLaVA"
+      }
+    },
+    {
+      "title": "Uncertainty is Fragile: Manipulating Uncertainty in Large Language Models",
+      "authors": [
+        "Qingcheng Zeng",
+        "Mingyu Jin",
+        "Qinkai Yu",
+        "Zhenting Wang",
+        "Wenyue Hua",
+        "Guangyan Sun",
+        "Yanda Meng",
+        "Shiqing Ma",
+        "Qifan Wang",
+        "Felix Juefei-Xu",
+        "Kaize Ding",
+        "Fan Yang",
+        "Ruixiang Tang",
+        "Yongfeng Zhang"
+      ],
+      "venue": "CIKM (Short), 2025",
+      "thumbnail": "images/uncertainty_attack/figure.png",
+      "selected": 0,
+      "award": "",
+      "links": {
+        "pdf": "https://arxiv.org/pdf/2407.11282",
+        "code": "https://github.com/qcznlp/uncertainty_attack"
+      }
+    }
+  ]
+}
