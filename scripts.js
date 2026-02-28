@@ -2,8 +2,45 @@
 let allPublications = [];
 let showingSelected = true;
 
+// ========== CONFERENCE COUNTDOWN CONFIG ==========
+// Edit these fields to switch to a different conference:
+const CONF = {
+  name: 'ECCV 2026',            // display name
+  url:  'https://eccv.ecva.net/',// conference website
+  deadline: '2026-03-05T22:00:00Z', // submission deadline in UTC
+                                     // (Mar 5, 2026 16:00 UTC-6 = 22:00 UTC)
+};
+// ==================================================
+
+function initCountdown() {
+  const container = document.getElementById('conf-countdown');
+  if (!container) return;
+
+  const link = document.createElement('a');
+  link.href = CONF.url;
+  link.className = 'countdown-link';
+  link.innerHTML = '<span class="countdown-label">' + CONF.name + '</span> <span id="conf-timer"></span>';
+  container.appendChild(link);
+
+  function tick() {
+    const diff = new Date(CONF.deadline) - new Date();
+    const timer = document.getElementById('conf-timer');
+    if (diff <= 0) { timer.textContent = '(passed)'; return; }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    timer.textContent = d + 'd ' + h + 'h ' + m + 'm ' + s + 's';
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
+  // Start conference countdown
+  initCountdown();
+
   // Load publications data
   loadPublications();
   
