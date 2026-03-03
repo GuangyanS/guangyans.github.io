@@ -5,10 +5,10 @@ let showingSelected = true;
 // ========== CONFERENCE COUNTDOWN CONFIG ==========
 // Edit these fields to switch to a different conference:
 const CONF = {
-  name: 'ECCV 2026',            // display name
-  url:  'https://eccv.ecva.net/',// conference website
-  deadline: '2026-03-05T22:00:00Z', // submission deadline in UTC
-                                     // (Mar 5, 2026 16:00 UTC-6 = 22:00 UTC)
+  name: 'NeurIPS 2026',            // display name
+  url:  'https://neurips.cc',// conference website
+  deadline: '2026-05-07T11:59:00Z', // submission deadline in UTC
+                                     // (May 7, 2026 11:59 AM UTC)
 };
 // ==================================================
 
