@@ -5,10 +5,10 @@ let showingSelected = true;
 // ========== CONFERENCE COUNTDOWN CONFIG ==========
 // Edit these fields to switch to a different conference:
 const CONF = {
-  name: 'NeurIPS 2026',            // display name
-  url:  'https://neurips.cc',// conference website
-  deadline: '2026-05-07T11:59:00Z', // submission deadline in UTC
-                                     // (May 7, 2026 11:59 AM UTC)
+  name: 'EMNLP 2026',              // display name
+  url:  'https://2026.emnlp.org/', // conference website
+  deadline: '2026-05-26T11:59:59Z', // submission deadline in UTC
+                                     // (May 26, 2026 06:59:59 UTC-5)
 };
 // ==================================================
 
