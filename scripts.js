@@ -5,10 +5,10 @@ let showingSelected = true;
 // ========== CONFERENCE COUNTDOWN CONFIG ==========
 // Edit these fields to switch to a different conference:
 const CONF = {
-  name: 'EMNLP 2026',              // display name
-  url:  'https://2026.emnlp.org/', // conference website
-  deadline: '2026-05-26T11:59:59Z', // submission deadline in UTC
-                                     // (May 26, 2026 06:59:59 UTC-5)
+  name: 'AAAI 2027',               // display name
+  url:  'https://aaai.org/conference/aaai/aaai-27/', // conference website
+  deadline: '2026-07-28T11:59:59Z', // submission deadline in UTC
+                                     // (Jul 28, 2026 06:59:59 UTC-5 / Jul 27, 2026 23:59:59 UTC-12)
 };
 // ==================================================
 
