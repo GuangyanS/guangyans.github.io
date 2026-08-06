@@ -5,10 +5,10 @@ let showingSelected = true;
 // ========== CONFERENCE COUNTDOWN CONFIG ==========
 // Edit these fields to switch to a different conference:
 const CONF = {
-  name: 'AAAI 2027',               // display name
-  url:  'https://aaai.org/conference/aaai/aaai-27/', // conference website
-  deadline: '2026-07-28T11:59:59Z', // submission deadline in UTC
-                                     // (Jul 28, 2026 06:59:59 UTC-5 / Jul 27, 2026 23:59:59 UTC-12)
+  name: 'ICLR 2027',               // display name
+  url:  'https://iclr.cc/Conferences/2027', // conference website
+  deadline: '2026-09-26T11:59:59Z', // paper deadline in UTC
+                                     // (Sep 25, 2026 11:59:59 PM AoE / UTC-12)
 };
 // ==================================================
 
