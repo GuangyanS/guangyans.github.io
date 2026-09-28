@@ -5,10 +5,9 @@ let showingSelected = true;
 // ========== CONFERENCE COUNTDOWN CONFIG ==========
 // Edit these fields to switch to a different conference:
 const CONF = {
-  name: 'ICLR 2027',               // display name
-  url:  'https://iclr.cc/Conferences/2027', // conference website
-  deadline: '2026-09-26T11:59:59Z', // paper deadline in UTC
-                                     // (Sep 25, 2026 11:59:59 PM AoE / UTC-12)
+  name: 'ARR Oct 2026',
+  url:  'https://aclrollingreview.org/dates',
+  deadline: '2026-10-13T11:59:59Z', // Oct 12, 2026 11:59:59 PM AoE / UTC-12
 };
 // ==================================================
 
