@@ -5,9 +5,9 @@ let showingSelected = true;
 // ========== CONFERENCE COUNTDOWN CONFIG ==========
 // Edit these fields to switch to a different conference:
 const CONF = {
-  name: 'ARR Oct 2026',
-  url:  'https://aclrollingreview.org/dates',
-  deadline: '2026-10-13T11:59:59Z', // Oct 12, 2026 11:59:59 PM AoE / UTC-12
+  name: 'CVPR 2027',
+  url:  'https://cvpr.thecvf.com/Conferences/2027/Dates',
+  deadline: '2026-11-17T11:59:59Z', // Nov 16, 2026 11:59:59 PM AoE / UTC-12 (paper submission)
 };
 // ==================================================
 
