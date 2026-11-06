@@ -605,3 +605,33 @@ strong {
     background: radial-gradient(circle at top, rgba(47, 74, 184, 0.08), transparent 60%);
   }
 }
+
+/* Availability preview: styles are scoped to avoid affecting the existing site. */
+.availability-intro { margin: 0 0 1rem; }
+.availability-card { background: var(--section-bg); border: 1px solid var(--border-color); border-radius: 18px; padding: clamp(12px, 2vw, 22px); }
+.availability-toolbar { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:12px; }
+.availability-muted,.availability-note { color:var(--text-secondary); font-size:.82rem; }
+.availability-legend { display:flex; gap:12px; font-size:.82rem; }
+.availability-legend span { display:inline-flex; align-items:center; gap:5px; }
+.availability-swatch { width:12px; height:12px; border-radius:3px; display:inline-block; }
+.availability-free { background:#c8eddb; }
+.availability-busy { background:#9eabc3; }
+.availability-status { font-size:.8rem; margin:6px 0; color:var(--text-secondary); }
+.availability-calendar { display:grid; grid-template-columns:46px repeat(7,minmax(0,1fr)); gap:2px; }
+.availability-hour { font-size:.67rem; color:var(--text-secondary); height:11px; line-height:11px; }
+.availability-slot { height:11px; border-radius:2px; background:#c8eddb; }
+.availability-slot.is-busy { background:#9eabc3; }
+.availability-slot.is-past { opacity:.38; }
+.availability-day-button { background:transparent; border:0; border-radius:7px; cursor:pointer; padding:5px 1px; color:var(--text-color); font:inherit; font-size:.72rem; line-height:1.35; }
+.availability-day-button[aria-pressed="true"] { background:rgba(47,74,184,.12); font-weight:600; }
+.availability-day-button:focus-visible { outline:2px solid var(--accent-color); outline-offset:2px; }
+.availability-day-detail { margin-top:14px; padding:12px; background:rgba(255,255,255,.7); border-radius:10px; font-size:.86rem; }
+.availability-day-detail strong { display:block; margin-bottom:5px; }
+.availability-note { margin:12px 0 0; line-height:1.5; }
+@media(max-width:600px) {
+ .availability-calendar { grid-template-columns:38px repeat(7,minmax(0,1fr)); gap:1px; }
+ .availability-slot { height:10px; }
+ .availability-hour { height:10px; font-size:.6rem; }
+ .availability-day-button { font-size:.62rem; }
+ .availability-card { padding:10px; }
+}
