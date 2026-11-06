@@ -237,3 +237,84 @@ window.onclick = function(event) {
     closeModal();
   }
 }
+
+/* Availability demo: no Google credentials or event metadata are accessed by the browser. */
+const AVAILABILITY_TIME_ZONE = 'America/Chicago';
+let availabilitySelectedDay = 0;
+
+function availabilityDateKey(date) {
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: AVAILABILITY_TIME_ZONE, year: 'numeric', month: '2-digit', day: '2-digit'
+  }).format(date);
+}
+function availabilityDayLabel(key) {
+  const [y,m,d] = key.split('-').map(Number);
+  return new Intl.DateTimeFormat('en-US', { weekday:'short', month:'short', day:'numeric', timeZone:'UTC' })
+    .format(new Date(Date.UTC(y,m-1,d,12)));
+}
+function availabilitySlotLabel(index) {
+  return String(Math.floor(index/2)).padStart(2,'0') + ':' + (index%2 ? '30' : '00');
+}
+function availabilityIntervals(slots) {
+  const intervals=[]; let start=null;
+  for(let i=0;i<=48;i++) {
+    if(i<48 && slots[i]===false && start===null) start=i;
+    if((i===48 || slots[i]!==false) && start!==null) {
+      intervals.push(availabilitySlotLabel(start)+'–'+availabilitySlotLabel(i)); start=null;
+    }
+  }
+  return intervals;
+}
+function renderAvailability(data) {
+  const calendar=document.getElementById('availability-calendar');
+  const status=document.getElementById('availability-status');
+  const detail=document.getElementById('availability-day-detail');
+  const range=document.getElementById('availability-range');
+  if(!calendar || !detail || !range || !status) return;
+  const today=availabilityDateKey(new Date());
+  const dates=data.days.map(d=>d.date);
+  if(!data.demo || data.timezone!==AVAILABILITY_TIME_ZONE || data.days.length!==7 ||
+     data.days.some(d=>!/^\d{4}-\d{2}-\d{2}$/.test(d.date)||!Array.isArray(d.busy)||d.busy.length!==48||d.busy.some(x=>typeof x!=='boolean'))){
+    throw new Error('Invalid demo availability data');
+  }
+  status.textContent='Preview only · Simulated schedule';
+  range.textContent=availabilityDayLabel(dates[0])+' – '+availabilityDayLabel(dates[6])+' · CT';
+  calendar.replaceChildren();
+  const blank=document.createElement('div'); calendar.appendChild(blank);
+  data.days.forEach((day,i)=>{
+    const btn=document.createElement('button'); btn.type='button';
+    btn.className='availability-day-button';
+    btn.textContent=availabilityDayLabel(day.date).replace(',','');
+    btn.setAttribute('aria-pressed',String(i===availabilitySelectedDay));
+    btn.addEventListener('click',()=>{availabilitySelectedDay=i;renderAvailability(data);});
+    calendar.appendChild(btn);
+  });
+  for(let slot=0;slot<48;slot++){
+    const time=document.createElement('div');time.className='availability-hour';
+    if(slot%4===0)time.textContent=availabilitySlotLabel(slot);
+    calendar.appendChild(time);
+    data.days.forEach(day=>{
+      const cell=document.createElement('div');
+      cell.className='availability-slot'+(day.busy[slot]?' is-busy':'')+(day.date<today?' is-past':'');
+      cell.title=availabilityDayLabel(day.date)+' '+availabilitySlotLabel(slot)+' · '+(day.busy[slot]?'Busy':'Free')+' (demo)';
+      calendar.appendChild(cell);
+    });
+  }
+  const day=data.days[availabilitySelectedDay];
+  detail.replaceChildren();
+  const heading=document.createElement('strong');heading.textContent=availabilityDayLabel(day.date)+' · Free intervals (demo)';
+  const intervals=document.createElement('span'); intervals.textContent=availabilityIntervals(day.busy).join(' · ')||'No free intervals';
+  detail.append(heading,intervals);
+}
+async function initAvailability(){
+  if(!document.getElementById('availability-calendar'))return;
+  try {
+    const response=await fetch('data/availability-demo.json',{cache:'no-store'});
+    if(!response.ok)throw new Error('Availability preview unavailable');
+    renderAvailability(await response.json());
+  } catch(error) {
+    console.error(error);
+    document.getElementById('availability-status').textContent='Availability preview unavailable.';
+  }
+}
+document.addEventListener('DOMContentLoaded',initAvailability);
