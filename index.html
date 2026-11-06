@@ -47,6 +47,7 @@
                 <!-- <li><a href="#calendar">Calendar</a></li> -->
                 <li><a href="#services">Service</a></li>
                 <li><a href="#miscellaneous">Misc</a></li>
+                <li><a href="#availability">Availability</a></li>
             </ul>
         </nav>
 
@@ -153,6 +154,20 @@
                 </div>
             </div>
         </section>
+            <section id="availability" aria-labelledby="availability-title">
+                <h2 id="availability-title">Availability</h2>
+                <p class="availability-intro">A privacy-conscious overview of my schedule in Central Time. Event details are never displayed.</p>
+                <div class="availability-card">
+                    <div class="availability-toolbar">
+                        <div><strong>Next 7 days</strong><div id="availability-range" class="availability-muted"></div></div>
+                        <div class="availability-legend"><span><i class="availability-swatch availability-free"></i>Free</span><span><i class="availability-swatch availability-busy"></i>Busy</span></div>
+                    </div>
+                    <p id="availability-status" class="availability-status" role="status">Loading availability preview…</p>
+                    <div id="availability-calendar" class="availability-calendar" aria-label="Seven-day availability"></div>
+                    <div id="availability-day-detail" class="availability-day-detail"></div>
+                    <p class="availability-note">Times shown in America/Chicago. This is a demonstration using simulated data, not my real Google Calendar. Availability is indicative and does not guarantee a meeting slot.</p>
+                </div>
+            </section>
         </main>
 
         <footer>
@@ -165,6 +180,6 @@
         <span class="modal-close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modalImage">
     </div>
-    <script src="scripts.js?v=cvpr2027"></script>
+    <script src="scripts.js?v=availability-preview-1"></script>
 </body>
 </html>
