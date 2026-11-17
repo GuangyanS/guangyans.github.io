@@ -1,6 +1,47 @@
 {
   "publications": [
     {
+      "title": "Learning to Plan from Random Exploration",
+      "authors": [
+        "Deqian Kong*",
+        "Guangyan Sun*",
+        "Sheng Cheng*",
+        "Sirui Xie",
+        "Bo Pang",
+        "Jianwen Xie",
+        "Tony Geng",
+        "Caiwen Ding",
+        "Ying Nian Wu"
+      ],
+      "venue": "arXiv, 2026",
+      "thumbnail": "images/explore2plan/plan.png",
+      "selected": 1,
+      "award": "",
+      "links": {
+        "pdf": "https://arxiv.org/pdf/2609.38383"
+      }
+    },
+    {
+      "title": "BITE: Boosting LLM Training via Sandwich-Bite Dataflow and Dynamic Subspace Auto-Alignment",
+      "authors": [
+        "Ruibing Song",
+        "Taowen Wang",
+        "Guangyan Sun",
+        "Chunshu Wu",
+        "Qifan Wang",
+        "Dongfang Liu",
+        "Sushant Kondguli",
+        "Yuchen Hao",
+        "Ang Li",
+        "Tong Geng"
+      ],
+      "venue": "MICRO, 2026",
+      "thumbnail": "images/BITE/fig1.png",
+      "selected": 0,
+      "award": "",
+      "links": {}
+    },
+    {
       "title": "MEPT: Mixture of Expert Prompt Tuning as a Manifold Mapper",
       "authors": [
         "Runjia Zeng",
@@ -17,7 +58,7 @@
       ],
       "venue": "EMNLP (Main), 2025",
       "thumbnail": "images/mept/figure.png",
-      "selected": 1,
+      "selected": 0,
       "award": "",
       "links": {
         "pdf": "https://arxiv.org/pdf/2509.00996",

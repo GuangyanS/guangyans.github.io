@@ -5,9 +5,9 @@ let showingSelected = true;
 // ========== CONFERENCE COUNTDOWN CONFIG ==========
 // Edit these fields to switch to a different conference:
 const CONF = {
-  name: 'CVPR 2027',
-  url:  'https://cvpr.thecvf.com/Conferences/2027/Dates',
-  deadline: '2026-11-17T11:59:59Z', // Nov 16, 2026 11:59:59 PM AoE / UTC-12 (paper submission)
+  name: 'ICML 2027',
+  url:  'https://icml.cc/Conferences/2027/Dates',
+  deadline: '2027-01-23T11:59:59Z', // Jan 22, 2027 11:59:59 PM AoE / UTC-12 (paper submission)
 };
 // ==================================================
 
@@ -120,10 +120,12 @@ function createPublicationElement(publication) {
   thumbnail.className = 'pub-thumbnail';
   thumbnail.onclick = () => openModal(publication.thumbnail);
   
-  const thumbnailImg = document.createElement('img');
-  thumbnailImg.src = publication.thumbnail;
-  thumbnailImg.alt = `${publication.title} thumbnail`;
-  thumbnail.appendChild(thumbnailImg);
+  if (publication.thumbnail) {
+    const thumbnailImg = document.createElement('img');
+    thumbnailImg.src = publication.thumbnail;
+    thumbnailImg.alt = `${publication.title} thumbnail`;
+    thumbnail.appendChild(thumbnailImg);
+  }
   
   // Create content container
   const content = document.createElement('div');
@@ -205,7 +207,7 @@ function createPublicationElement(publication) {
   }
   
   // Assemble the publication item
-  pubItem.appendChild(thumbnail);
+  if (publication.thumbnail) pubItem.appendChild(thumbnail);
   pubItem.appendChild(content);
   
   return pubItem;
